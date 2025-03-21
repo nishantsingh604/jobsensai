@@ -37,7 +37,7 @@ const HeroSection = () => {
           </h1>
           <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl">
             Advance your career with personalised guidance, interview
-            preparation, and AI- powered tools for job success.
+            preparation, and AI - powered tools for job success.
           </p>
         </div>
         <div className="flex justify-center space-x-4">
@@ -57,7 +57,7 @@ const HeroSection = () => {
         <div className="hero-image-wrapper mt-5 md:mt-0">
           <div ref={imageRef} className="hero-image">
             <Image
-              src="/banner.jpeg"
+              src="/banner.png"
               width={1280}
               height={720}
               alt="Dashboard Preview"
