@@ -6,4 +6,4 @@ const AICoverLettersPage = () => {
   )
 }
 
-export default AICoverLettersPage
+export default AICoverLettersPage 

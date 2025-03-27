@@ -6,19 +6,13 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+// import { useState, useEffect } from "react";
+// import { useRouter } from "next/navigation";
+// import { useForm } from "react-hook-form";
+// import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle
-} from "@/components/ui/card";
+
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -32,8 +26,8 @@ import {
   SelectTrigger,
   SelectValue
 } from "@/components/ui/select";
-import useFetch from "@/hooks/use-fetch";
-import { onboardingSchema } from "@/app/lib/schema";
+// import useFetch from "@/hooks/use-fetch";
+// import { onboardingSchema } from "@/app/lib/schema";
 import { updateUser } from "@/actions/user";
 
 
