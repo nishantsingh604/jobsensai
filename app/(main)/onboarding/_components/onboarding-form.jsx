@@ -1,9 +1,11 @@
 "use client";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "./../../../../node_modules/@hookform/resolvers/zod/src/zod";
-import { onboardingSchema } from "@/app/lib/schema";
-import { useEffect, useState } from "react";
+
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 import {
   Card,
   CardContent,
@@ -11,9 +13,6 @@ import {
   CardHeader,
   CardTitle
 } from "@/components/ui/card";
-
-import { Loader2 } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -22,13 +21,14 @@ import {
   Select,
   SelectContent,
   SelectGroup,
-  SelectItem, 
+  SelectItem,
   SelectLabel,
   SelectTrigger,
   SelectValue
 } from "@/components/ui/select";
-import { updateUser } from "@/actions/user";
 import useFetch from "@/hooks/use-fetch";
+import { onboardingSchema } from "@/app/lib/schema";
+import { updateUser } from "@/actions/user";
 
 const OnboardingForm = ({ industries }) => {
   const router = useRouter();
@@ -67,7 +67,7 @@ const OnboardingForm = ({ industries }) => {
 
   useEffect(() => {
     if (updateResult?.success && !updateLoading) {
-      toast.success("Profile completed successfully!");
+      toast.success("Profile Created successfully!");
       router.push("/dashboard");
       router.refresh();
     }
@@ -80,17 +80,17 @@ const OnboardingForm = ({ industries }) => {
       <Card className="w-full max-w-lg mt-10 mx-2">
         <CardHeader>
           <CardTitle className="gradient-title text-4xl">
-            Complete Your Profile
+            Complete Your Profile To Check Career Insights
           </CardTitle>
           <CardDescription>
-            Select your industry to get personalized career insights and
-            recommendations.
+            Select your preferred industry to get personalized career insights
+            and recommendations.
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="industry">Industry</Label>
+              <Label htmlFor="industry">Industry:</Label>
               <Select
                 onValueChange={(value) => {
                   setValue("industry", value);
@@ -123,7 +123,7 @@ const OnboardingForm = ({ industries }) => {
 
             {watchIndustry && (
               <div className="space-y-2">
-                <Label htmlFor="subIndustry">Specialization</Label>
+                <Label htmlFor="subIndustry">Specialization:</Label>
                 <Select
                   onValueChange={(value) => setValue("subIndustry", value)}
                 >
@@ -150,13 +150,13 @@ const OnboardingForm = ({ industries }) => {
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="experience">Years of Experience</Label>
+              <Label htmlFor="experience">Years of Experience:</Label>
               <Input
                 id="experience"
                 type="number"
                 min="0"
                 max="50"
-                placeholder="Enter years of experience"
+                placeholder="Enter the amount of years of experience"
                 {...register("experience")}
               />
               {errors.experience && (
@@ -167,14 +167,14 @@ const OnboardingForm = ({ industries }) => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="skills">Skills</Label>
+              <Label htmlFor="skills">Skills:</Label>
               <Input
                 id="skills"
                 placeholder="e.g., Python, JavaScript, Project Management"
                 {...register("skills")}
               />
               <p className="text-sm text-muted-foreground">
-                Separate multiple skills with commas
+                <span className="text-green-500">*</span>Separate multiple skills with commas
               </p>
               {errors.skills && (
                 <p className="text-sm text-red-500">{errors.skills.message}</p>
@@ -182,10 +182,10 @@ const OnboardingForm = ({ industries }) => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="bio">Professional Bio</Label>
+              <Label htmlFor="bio">Professional Background:</Label>
               <Textarea
                 id="bio"
-                placeholder="Tell us about your professional background..."
+                placeholder="Give a brief bio about your professional experience..."
                 className="h-32"
                 {...register("bio")}
               />
