@@ -29,7 +29,6 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
 const DashboardView = ({ insights }) => {
-  // Transform salary data for the chart
   const salaryData = insights.salaryRanges.map((range) => ({
     name: range.role,
     min: range.min / 1000,
@@ -66,7 +65,6 @@ const DashboardView = ({ insights }) => {
   const OutlookIcon = getMarketOutlookInfo(insights.marketOutlook).icon;
   const outlookColor = getMarketOutlookInfo(insights.marketOutlook).color;
 
-  // Format dates using date-fns
   const lastUpdatedDate = format(new Date(insights.lastUpdated), "dd/MM/yyyy");
   const nextUpdateDistance = formatDistanceToNow(
     new Date(insights.nextUpdate),
@@ -79,12 +77,11 @@ const DashboardView = ({ insights }) => {
         <Badge variant="outline">Last updated: {lastUpdatedDate}</Badge>
       </div>
 
-      {/* Market Overview Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
-              Market Outlook
+              Market Outlook:
             </CardTitle>
             <OutlookIcon className={`h-4 w-4 ${outlookColor}`} />
           </CardHeader>
@@ -99,7 +96,7 @@ const DashboardView = ({ insights }) => {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
-              Industry Growth
+              Industry Growth:
             </CardTitle>
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
@@ -146,7 +143,7 @@ const DashboardView = ({ insights }) => {
       {/* Salary Ranges Chart */}
       <Card className="col-span-4">
         <CardHeader>
-          <CardTitle>Salary Ranges by Role</CardTitle>
+          <CardTitle>Salary Ranges by Role:</CardTitle>
           <CardDescription>
             Displaying minimum, median, and maximum salaries (in thousands)
           </CardDescription>
@@ -188,9 +185,9 @@ const DashboardView = ({ insights }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Card>
           <CardHeader>
-            <CardTitle>Key Industry Trends</CardTitle>
+            <CardTitle>Key Industry Trends:</CardTitle>
             <CardDescription>
-              Current trends shaping the industry
+              Current trends which are shaping the industry
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -207,8 +204,8 @@ const DashboardView = ({ insights }) => {
 
         <Card>
           <CardHeader>
-            <CardTitle>Recommended Skills</CardTitle>
-            <CardDescription>Skills to consider developing</CardDescription>
+            <CardTitle>Recommended Skills:</CardTitle>
+            <CardDescription>Skills to consider developing with potential career development</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-2">

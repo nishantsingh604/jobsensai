@@ -17,7 +17,7 @@ export default function MockInterviewPage() {
         <div>
           <h1 className="text-6xl font-bold gradient-title">Mock Interview</h1>
           <p className="text-muted-foreground">
-            Test your knowledge with industry-specific questions
+            Test your knowledge with industry-specific questions and get real-time feedback. This mock interview is designed to help you prepare for technical interviews by simulating the experience of answering questions in a timed environment. You will receive immediate feedback on your performance, including areas for improvement and tips for success.
           </p>
         </div>
       </div>

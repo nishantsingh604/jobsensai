@@ -14,7 +14,7 @@ export default async function EditCoverLetterPage({ params }) {
         <Link href="/ai-cover-letter">
           <Button variant="link" className="gap-2 pl-0">
             <ArrowLeft className="h-4 w-4" />
-            Back to Cover Letters
+            Back to the Cover Letters
           </Button>
         </Link>
 

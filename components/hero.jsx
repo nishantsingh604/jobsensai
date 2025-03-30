@@ -48,9 +48,9 @@ const HeroSection = () => {
           </Link>
         </div>
         <div>
-          <Link href="https://www.linkedin.com/in/nishantsingh604/">
+          <Link href="https://github.com/nishantsingh604/">
             <Button size="lg" className="px-8" variant="outline">
-              Get Started
+              My Portfolio
             </Button>
           </Link>
         </div>
