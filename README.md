@@ -1,4 +1,4 @@
-# JobSensai
+# JobSensai 👨‍💼📄🧑‍💻☕
 
 ![image](https://github.com/user-attachments/assets/965b7d50-80c9-487e-a420-d89fd9dd22aa)
 
@@ -22,11 +22,23 @@
 
 ## 🛠 Tech Stack
 
-- **Frontend:** React 19+ (Next.js) with Tailwind CSS
-- **Backend:** Prisma, NeonDB, Inngest
-- **Authentication and Profile Management:** Clerk
-- **AI Integration:** Gemini API
-- **UI Components:** Shadcn UI
+### **Frontend:**
+- React 19+
+- Next.js
+- Tailwind CSS
+- Shadcn UI (for UI components)
+
+### **Backend:**
+- Next.js API Routes
+- Prisma ORM
+- NeonDB (PostgreSQL)
+- Inngest (Background Jobs & Cron Jobs)
+
+### **Authentication:**
+- Clerk Authentication
+
+### **AI Integration:**
+- Gemini API (AI-driven insights, resume generation, cover letter generation, and interview questions)
 
 ---
 
@@ -124,6 +136,10 @@
 │   ├── api/              # API integrations
 │   ├── styles/           # Global styles (Tailwind)
 │   ├── db/               # Prisma database setup
+│   ├── services/         # Business logic and API interactions
+│   ├── contexts/         # React Context API files
+│   ├── store/            # Global state management (if applicable)
+│   ├── types/            # TypeScript type definitions
 │── .env.example          # Environment variables example
 │── next.config.js        # Next.js config
 │── tailwind.config.js    # Tailwind config
@@ -156,4 +172,6 @@
 ---
 
 📧 **Need Help?** Feel free to open an issue or reach out!
+
+
 
